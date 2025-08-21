@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YRoute69 - A New Era of Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Popup Form di Contatto -->
+    <div id="contactPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Contattaci</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Nome completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Messaggio" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Invia Messaggio</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sezione 1: Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="vertical-text">A NEW ERA OF TRAVEL</div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="logo">
+                    <span class="route">YRoute</span><span class="sixty-nine">69</span>
+                </div>
+                <div class="hero-text">
+                    <div class="subtitle">
+                        <div class="line"></div>
+                        <span>Plan Your Trip. <span class="highlight">Your Way.</span> <span class="highlight">In Minutes.</span></span>
+                    </div>
+                    <h1>COSTRUISCI LA TUA PROSSIMA AVVENTURA</h1>
+                    <div class="vertical-line"></div>
+                    <p>CONFRONTA, SCEGLI E SINCRONIZZA TUTTO IN UN SOLO CLIC. TUTTO CIÒ CHE TI SERVE, IN UN UNICO POSTO.</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary" onclick="openContactPopup()">Registrati ora</button>
+                        <div class="demo-button">
+                            <div class="star-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>Try the first Demo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL TO DISCOVER</span>
+            <div class="scroll-line"></div>
+        </div>
+        <div class="sidebar">
+            <span>BLOCCA L'ACCESSO IN ANTEPRIMA</span>
+        </div>
+    </section>
+
+    <!-- Sezione 2: Tu scrivi, noi creiamo -->
+    <section id="services" class="services-section">
+        <div class="services-content">
+            <div class="services-left">
+                <div class="image-cluster">
+                    <div class="diamond-card" data-category="enjoying">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-basket"></i>
+                            <span>Enjoining</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="beach">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-water"></i>
+                            <span>Beach</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="adventure">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-mountain"></i>
+                            <span>Adventure</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="dining">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-utensils"></i>
+                            <span>Dining</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="wildlife">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-mountain"></i>
+                            <span>Wild-Life</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="resort">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-home"></i>
+                            <span>Resort</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="tours">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tours</span>
+                        </div>
+                    </div>
+                    <div class="diamond-card" data-category="spa">
+                        <div class="card-image"></div>
+                        <div class="card-label">
+                            <i class="fas fa-spa"></i>
+                            <span>SPA/Relax</span>
+                        </div>
+                    </div>
+                    <div class="central-image"></div>
+                </div>
+            </div>
+            <div class="services-right">
+                <h2>Tu scrivi, <span class="highlight">noi creiamo!</span></h2>
+                <p>Dall'ispirazione al viaggio: in un istante trasformeremo la tua idea in un itinerario su misura, ottimizzando tappe, soste e attrazioni per regalarti un'avventura indimenticabile e senza pensieri.</p>
+                <div class="input-field">
+                    <input type="text" placeholder="Ask us anything...">
+                    <button class="send-btn" onclick="openContactPopup()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione 3: Pianifica. Personalizza. Parti. -->
+    <section id="plan" class="plan-section">
+        <div class="plan-header">
+            <h2><span class="highlight">Pianifica.</span> Personalizza. Parti.</h2>
+            <p>Costruisci il tuo viaggio su misura in pochi clic. Volo, hotel, trasporti ed esperienze: tutto in un'unica piattaforma. Tu scegli, l'AI organizza. Visualizza ogni dettaglio del tuo itinerario, dalle tappe principali alle attività consigliate, arricchito da immagini, valutazioni e informazioni utili. Potrai modificare, aggiungere o eliminare elementi con un semplice clic, rendendo il viaggio davvero tuo.</p>
+            <div class="slogan">Semplice, completo, geniale.</div>
+        </div>
+        <div class="app-interface">
+            <div class="app-nav">
+                <div class="nav-icons">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-plane"></i>
+                    <i class="fas fa-calendar"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+                <button class="my-trip-btn">My Trip <i class="fas fa-suitcase"></i></button>
+                <div class="profile-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            <div class="app-content">
+                <div class="left-column">
+                    <div class="sidebar-icons">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="itinerary">
+                        <div class="day-item">
+                            <h4>1° Giorno</h4>
+                            <div class="placeholder">Seleziona il tuo Volo</div>
+                        </div>
+                        <div class="day-item">
+                            <h4>2° Giorno</h4>
+                            <div class="placeholder">Seleziona il tuo Alloggio</div>
+                        </div>
+                        <div class="day-item">
+                            <h4>3° Giorno</h4>
+                        </div>
+                    </div>
+                    <div class="ask-input">
+                        <input type="text" placeholder="Ask us anything...">
+                    </div>
+                </div>
+                <div class="center-column">
+                    <div class="destination-header">
+                        <h3>Scopri la Thailandia</h3>
+                        <div class="rating">
+                            <span>Luxury Resort</span>
+                            <div class="stars">★★★★★ 4.9</div>
+                        </div>
+                    </div>
+                    <div class="image-gallery">
+                        <div class="gallery-item large"></div>
+                        <div class="gallery-item large"></div>
+                        <div class="gallery-item small"></div>
+                        <div class="gallery-item small"></div>
+                    </div>
+                    <div class="trip-details">
+                        <button class="add-btn">Add to Trip</button>
+                        <span class="destination">Thailandia</span>
+                        <span class="date">Prima partenza mer, 07 mag 2025</span>
+                        <span class="duration">4 Notti</span>
+                        <span class="price">1549€</span>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                    <div class="interests">
+                        <div class="interest-item">
+                            <div class="interest-icon nature"></div>
+                            <span>Natura 70%</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon relax"></div>
+                            <span>Relax 43%</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon adventure"></div>
+                            <span>Avventura 50%</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon culture"></div>
+                            <span>Città & Cultura 68%</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon party"></div>
+                            <span>Party & Nightlife 45%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="map-section">
+                        <h4>Esplora sulla Mappa</h4>
+                        <div class="map">
+                            <!-- Mappa stilizzata degli USA -->
+                        </div>
+                    </div>
+                    <div class="calendar-section">
+                        <h4>Coordina il tuo calendario</h4>
+                        <div class="calendar">
+                            <div class="calendar-day">
+                                <h5>Tuesday</h5>
+                                <div class="calendar-item">Da Pipero €150</div>
+                                <div class="calendar-item">Hotel Hassler €950</div>
+                                <div class="calendar-item">Spa & Relax €75</div>
+                            </div>
+                            <div class="calendar-day">
+                                <h5>Wednesday</h5>
+                                <div class="calendar-item">Al Antico Vinaio</div>
+                                <div class="calendar-item flight">
+                                    <span>Volo Parigi - Roma</span>
+                                    <span>08.30</span>
+                                    <span>189€</span>
+                                    <span>Airfrance</span>
+                                </div>
+                                <div class="calendar-item">Cena in Hotel</div>
+                                <div class="calendar-item">Passeggiata per il centro</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Sezione 4: Find Your Tribe -->
+    <section id="community" class="community-section">
+        <div class="community-content">
+            <div class="community-text">
+                <h2>Trova la tua tribù, incontra la tua prossima avventura</h2>
+                <p>Entra in contatto con persone che condividono i tuoi stessi interessi per divertirti, stringere amicizie e viaggiare insieme.</p>
+                <div class="community-cta">
+                    <button class="btn-primary" onclick="openContactPopup()">Unisciti Gratis →</button>
+                    <a href="#" class="explore-link">
+                        <i class="fas fa-users"></i>
+                        Esplora la Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+
+
+    <!-- Sezione 5: Tutto quello di cui hai bisogno -->
+    <section id="features" class="features-section">
+        <h2>Tutto quello di cui hai bisogno, In un Unica Piattaforma</h2>
+        <div class="features-grid">
+            <div class="feature-card pink">
+                <div class="feature-icon">
+                    <img src="click.png" alt="Coin" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <h3>Un Click, Tutto Fatto</h3>
+                <p>Con un solo pagamento confermi tutte le esperienze e tappe del tuo viaggio. Dimentica mille schermate: tutto è chiaro, veloce e sicuro. Il modo più semplice e smart per prenotare e partire.</p>
+            </div>
+            <div class="feature-card blue">
+                <div class="feature-icon">
+                    <img src="assicurazione.png" alt="Coin" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <h3>Assicurazione? Già fatta.</h3>
+                <p>Niente stress e preoccupazioni. Ogni pacchetto creato su YRoute69 include l'assicurazione viaggio già integrata. Copertura totale. Zero pensieri.</p>
+            </div>
+            <div class="feature-card green">
+                <div class="feature-icon">
+                    <img src="offline.png" alt="Coin" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <h3>Viaggia Offline</h3>
+                <p>Sempre con te, ovunque: scarica itinerario, mappa interattiva, documenti e promemoria e sincronizzali con il tuo calendario. Il tuo viaggio resta a portata di mano—online e offline—senza mai perderti un dettaglio.</p>
+            </div>
+            <div class="feature-card purple">
+                <div class="feature-icon">
+                    <img src="coin.png" alt="Coin" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <h3>RouteCoin</h3>
+                <p>Accumula RouteCoin ogni volta che prenoti. Usali per ottenere sconti, vantaggi esclusivi e premi speciali. Il tuo prossimo viaggio? Te lo sei quasi già guadagnato.</p>
+            </div>
+            <div class="feature-card teal">
+                <div class="feature-icon">
+                    <img src="dona.png" alt="Coin" style="width: 100%; height: auto; border-radius: 10px;">
+                </div>
+                <h3>Un piccolo gesto, un grande impatto</h3>
+                <p>Al checkout puoi scegliere di donare una piccola parte a uno dei nostri progetti ambientali. Ogni viaggio può lasciare un impatto positivo, non solo impronte.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Sezione 6: Diventa nostro Partner -->
+    <section id="partner" class="partner-section">
+        <div class="partner-content">
+            <h2>Diventa nostro Partner.</h2>
+            <p>Unisciti a noi per creare insieme il futuro del viaggio. La tua passione, la nostra tecnologia: insieme possiamo trasformare ogni viaggio in un'esperienza straordinaria.</p>
+            <button class="btn-primary" onclick="openContactPopup()">Diventa Partner</button>
+        </div>
+        <div class="footer-bar">
+            <div class="footer-left">
+                <span>© 2025 All rights reserved</span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
