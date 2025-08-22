@@ -786,26 +786,463 @@ body {
     }
 }
 
-/* Sostituisci tabella con immagine dashboard sotto 950px */
+/* Carosello automatico sotto 950px */
 @media (max-width: 950px) {
     .dashboard-interface {
-        background-image: url('dashboard.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: white;
-        min-height: 400px;
+        display: none !important;
+    }
+    
+    .dashboard-carousel {
+        display: block !important;
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        background: #f0f0f0;
+        border: 5px solid red;
+        margin: 2rem 0;
+        z-index: 999;
+    }
+    
+    .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        padding: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        margin: 1rem;
-        max-width: calc(100vw - 2rem);
     }
     
-    .dashboard-interface .dashboard-header,
-    .dashboard-interface .dashboard-content {
-        display: none;
+    .carousel-slide.active {
+        opacity: 1;
+    }
+    
+    .slide-content {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-orange);
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Slide 1: Thailandia */
+    .thailand-package {
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .package-images {
+        margin-bottom: 1rem;
+    }
+    
+    .main-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .image-grid img {
+        width: 100%;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    .package-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .package-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .btn-outline {
+        background: white;
+        border: 2px solid var(--primary-orange);
+        color: var(--primary-orange);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+    
+    .package-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .category {
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.7rem;
+        color: white;
+        font-weight: 600;
+    }
+    
+    .category.nature { background: #4CAF50; }
+    .category.relax { background: #2196F3; }
+    .category.adventure { background: #FF9800; }
+    .category.culture { background: #9C27B0; }
+    .category.party { background: #F44336; }
+    
+    /* Slide 2: Chat AI */
+    .ai-chat-mobile {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .ai-message {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .ai-avatar {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-orange);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+    }
+    
+    .ai-content {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .ai-text {
+        font-size: 0.9rem;
+        color: var(--dark-grey);
+        margin-bottom: 0.5rem;
+    }
+    
+    .ai-preview {
+        font-size: 0.8rem;
+        color: var(--light-grey);
+        line-height: 1.4;
+    }
+    
+    /* Slide 3: Mappa */
+    .map-explore {
+        position: relative;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .map-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .map-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        padding: 1rem;
+    }
+    
+    .map-hint {
+        color: white;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .map-hint i {
+        margin-right: 0.5rem;
+        color: var(--primary-orange);
+    }
+    
+    /* Slide 4: Calendario */
+    .calendar-mobile {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calendar-events {
+        margin-bottom: 1rem;
+    }
+    
+    .calendar-event {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.8rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .event-icon {
+        width: 30px;
+        height: 30px;
+        background: var(--primary-orange);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.8rem;
+    }
+    
+    .event-details {
+        flex: 1;
+    }
+    
+    .event-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--dark-grey);
+    }
+    
+    .event-time {
+        font-size: 0.8rem;
+        color: var(--light-grey);
+    }
+    
+    .drag-indicator {
+        color: var(--light-grey);
+        font-size: 0.8rem;
+    }
+    
+    .calendar-hint {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--light-grey);
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+    
+    .calendar-hint i {
+        margin-right: 0.5rem;
+        color: var(--primary-orange);
+    }
+    
+    /* Indicatori del carosello */
+    .carousel-indicators {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 107, 53, 0.3);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .indicator.active {
+        background: var(--primary-orange);
+    }
+}
+
+/* Nascondi carosello su desktop */
+@media (min-width: 951px) {
+    .dashboard-carousel {
+        display: none !important;
+    }
+    
+    .test-carousel {
+        display: none !important;
+    }
+}
+
+/* Carosello semplice per mobile */
+@media (max-width: 950px) {
+    .simple-carousel {
+        display: block !important;
+        position: relative;
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        background: transparent;
+        margin: 2rem 0;
+        z-index: 999;
+    }
+    
+    .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .carousel-slide.active {
+        opacity: 1;
+    }
+    
+    .slide-content {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-orange);
+        margin-bottom: 1.5rem;
+    }
+    
+    .map-explore {
+        position: relative;
+    }
+    
+    /* Indicatori del carosello */
+    .carousel-indicators {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 107, 53, 0.3);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .indicator.active {
+        background: var(--primary-orange);
+    }
+}
+
+/* Nascondi carosello su desktop */
+@media (min-width: 951px) {
+    .simple-carousel {
+        display: none !important;
+    }
+}
+
+/* Ottimizzazioni per schermi molto piccoli */
+@media (max-width: 330px) {
+    .simple-carousel {
+        height: 300px;
+    }
+    
+    .carousel-slide {
+        padding: 1rem;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .slide-content {
+        max-width: 300px;
+    }
+    
+    /* Riduci padding per le card */
+    .thailand-package,
+    .ai-chat-mobile,
+    .calendar-mobile {
+        padding: 0.8rem;
+    }
+    
+    /* Riduci dimensioni immagini */
+    .thailand-package img {
+        height: 80px !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    /* Riduci margini */
+    .package-info > div {
+        margin-bottom: 0.3rem !important;
+    }
+    
+    /* Riduci padding bottoni */
+    .package-info button {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* Riduci padding categorie */
+    .package-info span {
+        padding: 0.2rem 0.6rem !important;
+        font-size: 0.6rem !important;
+    }
+}
+
+/* Forza visibilità del carosello su mobile */
+@media (max-width: 950px) {
+    .dashboard-carousel {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        border: 5px solid red !important;
+        background: #f0f0f0 !important;
+        height: 400px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 999 !important;
+    }
+    
+    .carousel-slide {
+        display: flex !important;
+    }
+    
+    .carousel-slide.active {
+        display: flex !important;
+        opacity: 1 !important;
     }
 }
 

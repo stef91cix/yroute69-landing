@@ -307,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSearchForm();
     initImageAnimations();
     initAppScroll();
+    initDashboardCarousel();
     
     // Aggiungi classe per animazioni CSS
     document.body.classList.add('loaded');
@@ -332,6 +333,50 @@ function debugInfo() {
     console.log('Feature cards:', document.querySelectorAll('.feature-card').length);
     console.log('Diamond cards:', document.querySelectorAll('.diamond-card').length);
     console.log('Characters:', document.querySelectorAll('.character').length);
+}
+
+// Carosello automatico per dashboard
+function initDashboardCarousel() {
+    const carousel = document.querySelector('.simple-carousel');
+    console.log('Carosello trovato:', carousel);
+    
+    if (!carousel) {
+        console.log('Carosello non trovato!');
+        return;
+    }
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.querySelectorAll('.indicator');
+    console.log('Slide trovate:', slides.length);
+    console.log('Indicatori trovati:', indicators.length);
+    
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        // Nascondi tutte le slide
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Mostra la slide corrente
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Cambia slide ogni 4 secondi
+    setInterval(nextSlide, 4000);
+    
+    // Click sugli indicatori
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
 }
 
 // Esporta funzioni per uso esterno
