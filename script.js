@@ -1,7 +1,21 @@
+// Google Analytics Tracking
+function trackEvent(eventName, parameters = {}) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, {
+            event_category: 'engagement',
+            event_label: 'yroute69_landing',
+            ...parameters
+        });
+    }
+}
+
 // Gestione del popup del form di contatto
 function openContactPopup() {
     document.getElementById('contactPopup').style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Track form open
+    trackEvent('form_opened');
 }
 
 function closeContactPopup() {
@@ -54,6 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             if (response.ok) {
+                // Track successful submission
+                trackEvent('form_submission_success');
+                trackEvent('conversion', {
+                    conversion_type: 'contact_form_submission',
+                    value: 1
+                });
+                
                 // Successo
                 alert('Grazie per l\'iscrizione. Ti aggiorneremo appena sarà pronta la prima versione in anteprima');
                 this.reset();
