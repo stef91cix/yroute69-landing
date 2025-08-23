@@ -1831,7 +1831,7 @@ body {
 }
 
 .feature-card p {
-    color: var(--light-grey);
+    color: #000;
     line-height: 1.6;
 }
 
