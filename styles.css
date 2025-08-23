@@ -149,39 +149,30 @@ body {
 }
 
 .brand-name {
-    font-size: 3.5rem;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 4rem;
     font-weight: 900;
-    color: var(--primary-orange);
     font-style: italic;
-    text-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
     position: relative;
-    animation: logoGlow 3s ease-in-out infinite;
     line-height: 1.2;
     padding: 0.2rem 0;
     white-space: nowrap;
     word-break: keep-all;
     display: inline-block;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.brand-name::before {
-    content: 'Y';
-    position: absolute;
-    top: 0;
-    left: 0;
+.y-letter {
     color: var(--primary-orange);
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
     animation: yPulse 2s ease-in-out infinite;
-    z-index: 1;
-    line-height: 1.2;
-    padding: 0.2rem 0;
 }
 
-@keyframes logoGlow {
-    0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.3));
-    }
-    50% {
-        filter: drop-shadow(0 0 25px rgba(255, 107, 53, 0.6));
-    }
+.route69-text {
+    color: white;
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
 }
 
 @keyframes yPulse {
@@ -195,36 +186,11 @@ body {
     }
 }
 
-/* Hover effects spettacolari per il logo */
-.logo:hover .brand-name {
-    animation: logoHover 0.5s ease-out forwards;
-}
 
-.logo:hover .brand-name::before {
-    animation: yHover 0.5s ease-out forwards;
-}
 
-@keyframes logoHover {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.3));
-    }
-    100% {
-        transform: scale(1.05);
-        filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.8));
-    }
-}
 
-@keyframes yHover {
-    0% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px rgba(255, 107, 53, 0.5));
-    }
-    100% {
-        transform: scale(1.2);
-        filter: drop-shadow(0 0 25px rgba(255, 107, 53, 1));
-    }
-}
+
+
 
 /* Testo "A NEW ERA OF TRAVEL" accanto al logo */
 .era-text {
@@ -308,6 +274,14 @@ body {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.demo-button:hover {
+    background: rgba(255, 107, 53, 0.1);
+    transform: translateY(-2px);
 }
 
 .star-icon {
@@ -2148,12 +2122,26 @@ body {
     
     /* Logo responsive con effetti mantenuti */
     .brand-name {
-        font-size: 2.8rem;
+        font-family: 'Cherry Bomb One', cursive;
+        font-size: 3.2rem;
         line-height: 1.2;
         padding: 0.2rem 0;
-        color: var(--primary-orange);
         white-space: nowrap;
         word-break: keep-all;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .y-letter {
+        color: var(--primary-orange);
+        -webkit-text-stroke: 1px white;
+        text-stroke: 1px white;
+        animation: yPulse 2s ease-in-out infinite;
+    }
+    
+    .route69-text {
+        color: white;
+        -webkit-text-stroke: 1px black;
+        text-stroke: 1px black;
     }
     
     .brand-name::before {
